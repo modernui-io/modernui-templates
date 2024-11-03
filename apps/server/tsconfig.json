@@ -1,0 +1,6 @@
+{
+  "extends": "@monorepo/tsconfig/express.json",
+  "include": [
+    "src"
+  ],
+}
