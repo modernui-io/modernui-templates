@@ -2,7 +2,10 @@
     "recommendations": [
       "yoavbls.pretty-ts-errors",
       "bradlc.vscode-tailwindcss",
-      "biomejs.biome"
+      "biomejs.biome",
+      "foxundermoon.shell-format",
+      "yoavbls.pretty-ts-errors",
+      "yzhang.markdown-all-in-one",
     ]
   }
   

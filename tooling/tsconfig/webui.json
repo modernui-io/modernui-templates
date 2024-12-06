@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Shared UI",
+  "extends": "./base.json",
+  "compilerOptions": {
+     /** Emit types for internal packages to speed up editor performance. */
+     "declaration": true,
+     "declarationMap": true,
+     "preserveWatchOutput": true,
+     "noEmit": false,
+     "emitDeclarationOnly": true,
+     "outDir": "${configDir}/dist"
+  }
+}

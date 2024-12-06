@@ -1,33 +1,48 @@
-import type { GetTestResponse } from "@monorepo/types";
-import cors from "cors";
-import express from "express";
-import morgan from "morgan";
+import { Hono } from "hono";
+import { cache } from "hono/cache";
+import { cors } from "hono/cors";
 
-const app = express();
+interface Bindings {
+  OPEN_AI_KEY: string;
+  AI: Ai;
+}
 
-app.use(morgan("tiny"));
-app.use(express.json({ limit: "100mb" }));
+const app = new Hono<{ Bindings: Bindings }>();
 
 app.use(
+  "/*",
   cors({
+    origin: "*", // Allow requests from your Next.js app
+    allowHeaders: [
+      "X-Custom-Header",
+      "Upgrade-Insecure-Requests",
+      "Content-Type",
+    ], // Add Content-Type to the allowed headers to fix CORS
+    allowMethods: ["POST", "GET", "OPTIONS", "PUT"],
+    exposeHeaders: ["Content-Length", "X-Kuma-Revision"],
+    maxAge: 600,
     credentials: true,
-    origin: ["http://localhost:3000"],
   }),
 );
 
-const port = process.env.PORT || 3001;
+app.get(
+  "*",
+  cache({
+    cacheName: "my-app",
+    cacheControl: "max-age=86400",
+  }),
+);
 
-app.get("/", (_, res) => {
-  res.send("Hello from Express!");
+app.get("/health", async (_c) => {
+  return new Response("OK");
 });
 
-app.get("/test", (_, res) => {
-  const testJson: GetTestResponse = {
-    message: "Hello from Express API!",
-  };
-  res.json(testJson);
+app.get("/version", async (_c) => {
+  return new Response("1.0.0");
 });
 
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+app.get("/", async (_c) => {
+  return new Response("Nothing to see here");
 });
+
+export default app;

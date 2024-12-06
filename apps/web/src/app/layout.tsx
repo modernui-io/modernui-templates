@@ -1,5 +1,4 @@
-import "@monorepo/ui/globals.css";
-import "./style.css";
+import "@/styles/globals.css";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 
@@ -26,7 +25,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased dark`}>{children}</body>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased dark`}
+      >
+        {children}
+      </body>
     </html>
   );
 }

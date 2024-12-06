@@ -1,9 +1,12 @@
 "use client";
 
-import type { GetTestResponse } from "@monorepo/types";
-import { Card, CardContent, CardHeader } from "@monorepo/ui/components/card";
-import { cn } from "@monorepo/utils/styles";
 import { useEffect, useState } from "react";
+import { Card, CardContent, CardHeader } from "~/components/ui/card";
+import { cn } from "~/lib/utils";
+
+interface GetTestResponse {
+  message: string;
+}
 
 const GetTest = () => {
   const [test, setTest] = useState<string>("");
@@ -23,7 +26,14 @@ const GetTest = () => {
     <div>
       <Card>
         <CardHeader>
-          <h1 className={cn("text-xl text-yellow-500", test !== "" && "text-green-500")}>Get Test</h1>
+          <h1
+            className={cn(
+              "text-xl text-yellow-500",
+              test !== "" && "text-green-500",
+            )}
+          >
+            Get Test
+          </h1>
         </CardHeader>
         <CardContent>
           <p>{test}</p>

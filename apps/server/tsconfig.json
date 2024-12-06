@@ -1,6 +1,21 @@
 {
-  "extends": "@monorepo/tsconfig/express.json",
-  "include": [
-    "src"
-  ],
+  "extends": "@modernui/tsconfig/base.json",
+  /* This TypeScript project config describes the environment that
+   * Convex functions run in and is used to typecheck them.
+   * You can modify it, but some settings required to use Convex.
+   */
+  "compilerOptions": {
+    "lib": ["es2022", "dom", "ES2023.Array"],
+    "jsx": "react-jsx",
+
+    "types": ["@cloudflare/workers-types/experimental"],
+    "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json",
+    /* These compiler options are required by Convex */
+    "module": "ESNext",
+    "paths": {
+      "@/convex/*": ["../api/src/*"]
+    }
+  },
+  "include": ["./**/*"],
+  "exclude": ["./src/_generated", "test"]
 }

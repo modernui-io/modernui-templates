@@ -1,27 +1,108 @@
 {
+  "biome.enabled": true,
+  "css.lint.propertyIgnoredDueToDisplay": "ignore",
+  "cursor.cmdk.useThemedDiffBackground": true,
+  "cursor.cpp.enablePartialAccepts": true,
+  "editor.autoClosingQuotes": "always",
+  "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
   "editor.codeActionsOnSave": {
-    "source.organizeImports.biome": "explicit",
+    // "quickfix.biome": "explicit",
     "source.fixAll.biome": "explicit",
+    "source.organizeImports.biome": "explicit"
   },
   "editor.defaultFormatter": "biomejs.biome",
   "editor.formatOnSave": true,
+  "editor.rulers": [
+    {
+      "column": 80
+    }
+  ],
+  "files.associations": {
+    "*.css": "tailwindcss",
+    "*.module.css": "tailwindcss",
+    "**/typescript/*.json": "jsonc",
+    "**/tsconfig.json": "jsonc",
+    "turbo.json": "jsonc"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  // "[json]": {
+  //   "editor.defaultFormatter": "vscode.json-language-features"
+  // },
+  "[jsonc]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  // "[markdown]": {
+  //   "editor.defaultFormatter": "esbenp.prettier-vscode"
+  // },
+  "[typescript]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  // "[tailwindcss]": {
+  //   "editor.defaultFormatter": "esbenp.prettier-vscode"
+  // },
+  "markdownlint.config": {
+    "MD033": false,
+    "MD030": false
+  },
+  "search.exclude": {
+    "**/.next": true,
+    "**/.turbo": true
+  },
+  "search.useIgnoreFiles": true,
+  "tailwindCSS.classAttributes": [
+    "class",
+    "className",
+    "ngClass",
+    "class:list",
+    // ...
+    "style"
+  ],
   "tailwindCSS.experimental.classRegex": [
     ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
-    ["cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
+    ["cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"],
+    [
+      "tw`([^`]*)",
+      ["tw.style\\(([^)]*)\\)", "'([^']*)'"],
+      "tw\\(([^)]*)\\)",
+      "[\"'`]([^\"'`]*).*?[\"'`]",
+      // "tw\\(([^)]*)\\)",
+      "tv\\(([^)]*)\\)",
+      "[\"'`]([^\"'`]*).*?[\"'`]",
+      "twc\\.[^`]+`([^`]*)`",
+      "twc\\(.*?\\).*?`([^`]*)",
+      ["twc\\.[^`]+\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"],
+      ["twc\\(.*?\\).*?\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"],
+      "twx\\.[^`]+`([^`]*)`",
+      "twx\\(.*?\\).*?`([^`]*)",
+      ["twx\\.[^`]+\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"],
+      ["twx\\(.*?\\).*?\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
+    ]
   ],
+  "tailwindCSS.experimental.configFile": "./tooling/tailwind/web.ts",
   "typescript.enablePromptUseWorkspaceTsdk": true,
-  "typescript.tsdk": "node_modules/typescript/lib",
   "typescript.preferences.autoImportFileExcludePatterns": [
     "next/router.d.ts",
     "next/dist/client/router.d.ts"
   ],
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "biomejs.biome"
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "[dotenv]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
   },
-  "[typescript]": {
-    "editor.defaultFormatter": "biomejs.biome"
+  "[shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
   },
-  "[json]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
+  "[ignore]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
   }
 }

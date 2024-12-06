@@ -1,20 +1,21 @@
 {
-  "extends": "@monorepo/tsconfig/next.json",
+  "extends": "@modernui/tsconfig/base.json",
   "compilerOptions": {
+    "baseUrl": ".",
+    "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json",
+    "paths": {
+      "@/public/*": ["./public/*"],
+      "@/site-content": ["./.contentlayer/generated"],
+      "@/*": ["./src/*"],
+      "~/*": ["../../packages/webui/src/*"],
+      "#/*": ["../../packages/shared/src/*"]
+    },
     "plugins": [
       {
         "name": "next"
       }
-    ],
+    ]
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    ".next/types/**/*.ts",
-    "tailwind.config.ts"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": [".", "next-env.d.ts", ".next/types/**/*.ts"],
+  "exclude": ["node_modules", "public/*.js"]
 }

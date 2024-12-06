@@ -1,9 +1,0 @@
-{
-  "extends": "@monorepo/tsconfig/utils.json",
-  "include": [
-    "**/*.ts",
-  ],
-  "exclude": [
-    "node_modules"
-  ],
-}

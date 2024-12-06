@@ -1,0 +1,45 @@
+{
+  "name": "@modernui/webui",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "./src/index.ts",
+  "exports": {
+    "./*": ["./src/*.tsx", "./src/*.ts"]
+  },
+  "scripts": {
+    "============= FORMAT =================": "",
+    "format": "biome format --write .",
+    "============= LINT =================": "",
+    "lint": "biome check . --max-diagnostics=50",
+    "lint:fix": "biome check --write . --max-diagnostics=50",
+    "lint:fix:errors": "biome check --write . --diagnostic-level=error --max-diagnostics=50",
+    "============= TYPE-CHECK =================": "",
+    "type-check": "tsc --noEmit",
+    "old:type-check": "tsc --noEmit --emitDeclarationOnly false",
+    "============= SHADCN =================": "",
+    "add-shadcn-component": "bunx shadcn@latest add",
+    "============= MISC =============": "",
+    "depcheck": "npx depcheck"
+  },
+  "dependencies": {
+    "@modernui/shared": "workspace:*",
+    "@radix-ui/react-accordion": "^1.2.1",
+    "@radix-ui/react-icons": "^1.3.2",
+    "@radix-ui/react-select": "^2.1.2",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "shadcn": "^2.1.6",
+    "tailwind-merge": "^2.5.5",
+    "tailwindcss-animate": "^1.0.7"
+  },
+  "devDependencies": {
+    "@modernui/tsconfig": "workspace:*",
+    "@types/react": "^18.3.13",
+    "@types/react-dom": "^18",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "react": "^19.0.0-rc-66855b96-20241106",
+    "tailwindcss": "^3.4.16"
+  }
+}

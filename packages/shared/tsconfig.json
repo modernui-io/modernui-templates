@@ -1,0 +1,12 @@
+{
+  "extends": "@modernui/tsconfig/base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "#/*": ["src/*"],
+      "~/*": ["../webui/src/*"]
+    }
+  },
+  "include": ["."],
+  "exclude": ["node_modules"]
+}

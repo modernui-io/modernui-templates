@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Template NextJS",
+  "extends": "@tsconfig/strictest/tsconfig.json",
+  "compilerOptions": {
+    /** Base Options */
+    "target": "ESNext",
+    "lib": ["dom", "dom.iterable", "ESNext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "moduleDetection": "force",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+
+    /** Transpile using Bundler (not tsc) */
+    "module": "Preserve",
+    "moduleResolution": "Bundler",
+    "noEmit": true,
+    "jsx": "preserve",
+
+    /** Keep TSC performant in monorepos */
+    "incremental": true,
+    "disableSourceOfProjectReferenceRedirect": true,
+    "tsBuildInfoFile": ".tsbuildinfo",
+
+    /** Strictness */
+    "strict": true,
+    "strictNullChecks": true,
+    "noUncheckedIndexedAccess": true,
+    "checkJs": true,
+    "forceConsistentCasingInFileNames": true,
+    "noPropertyAccessFromIndexSignature": false,
+    "removeComments": true,
+    "strictPropertyInitialization": true,
+    "allowSyntheticDefaultImports": true,
+    "downlevelIteration": true,
+    "exactOptionalPropertyTypes": false,
+    "noImplicitAny": true,
+    "alwaysStrict": true,
+
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "noImplicitOverride": false,
+
+    "baseUrl": ".",
+    "paths": {
+      "@/public/*": ["./public/*"],
+      "@/*": ["./src/*"]
+    },
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
+  },
+  "include": [".", "next-env.d.ts", ".next/types/**/*.ts"],
+  "exclude": ["node_modules", "public/*.js"]
+}

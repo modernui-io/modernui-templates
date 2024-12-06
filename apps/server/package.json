@@ -1,25 +1,53 @@
 {
   "name": "server",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "sideEffects": false,
   "scripts": {
-    "dev": "ts-node-dev --transpile-only src/server.ts"
+    "============= DEV ===================": "",
+    "dev": "bun with-env wrangler dev",
+    "start": "wrangler dev",
+    "test": "vitest",
+    "cf-typegen": "wrangler types",
+    "============= DEPLOY - TODO =================": "",
+    "deploy": "wrangler deploy",
+    "============= CLEAN =================": "",
+    "clean": "git clean -xdf .next .turbo node_modules",
+    "============= FORMAT =================": "",
+    "format": "biome format --write .",
+    "============= LINT =================": "",
+    "lint": "biome check . --max-diagnostics=50",
+    "lint:fix": "biome check --write . --max-diagnostics=50",
+    "lint:fix:errors": "biome check --write . --diagnostic-level=error --max-diagnostics=50",
+    "============= TYPE-CHECK =================": "",
+    "type-check": "tsc --noEmit",
+    "============= ENV =================": "",
+    "with-env": "dotenv -e ../../.env --",
+    "with-env:production": "dotenv -e .env.production --",
+    "============= MISC =================": "",
+    "depCheck": "npx depcheck"
   },
   "dependencies": {
-    "@monorepo/types": "workspace:*",
-    "express": "^4.21.1",
-    "ts-node-dev": "^2.0.0",
+    "@hono/node-server": "^1.13.7",
+    "@t3-oss/env-core": "0.11.1",
+    "@tsndr/cloudflare-worker-jwt": "^3.1.3",
     "cors": "2.8.5",
-    "morgan": "^1.10.0"
+    "express": "^4.21.1",
+    "hono": "^4.6.12",
+    "morgan": "^1.10.0",
+    "reflect-metadata": "^0.2.2",
+    "sharp": "^0.33.5",
+    "ts-node-dev": "^2.0.0"
   },
   "devDependencies": {
-    "@monorepo/tsconfig": "workspace:*",
+    "@cloudflare/vitest-pool-workers": "^0.5.33",
+    "@cloudflare/workers-types": "^4.20241202.0",
+    "@modernui/tsconfig": "workspace:*",
+    "@types/cors": "2.8.17",
     "@types/express": "^5.0.0",
     "@types/morgan": "^1.9.9",
-    "@types/cors": "2.8.17"
+    "vitest": "^2.1.8",
+    "wrangler": "^3.92.0"
   }
 }

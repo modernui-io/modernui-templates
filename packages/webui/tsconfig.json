@@ -1,0 +1,23 @@
+{
+  "extends": "@modernui/tsconfig/webui.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "#/*": ["../shared/src/*"],
+      "~/*": ["./src/*"]
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    ".next/types/**/*.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "tailwind.config.ts"
+  ],
+  "exclude": ["node_modules"]
+}
