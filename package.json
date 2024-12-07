@@ -7,7 +7,7 @@
     "yarn": "use `bun` instead",
     "pnpm": "use `bun` instead"
   },
-  "workspaces": ["packages/*", "apps/*", "tooling/*"],
+  "workspaces": ["templates/*", "packages/*", "apps/*", "tooling/*"],
   "packageManager": "bun@1.1.38",
   "scripts": {
     "changeset": "changeset",
