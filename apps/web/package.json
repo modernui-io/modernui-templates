@@ -21,16 +21,16 @@
   "dependencies": {
     "@modernui/shared": "workspace:*",
     "@modernui/webui": "workspace:*",
-    "next": "15.0.3",
-    "react": "^19.0.0-rc-66855b96-20241106",
-    "react-dom": "^19.0.0-rc-66855b96-20241106"
+    "next": "15.0.4",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
     "@modernui/tsconfig": "workspace:*",
     "@types/node": "^22",
-    "@types/react": "^18.3.13",
-    "@types/react-dom": "^18",
+    "@types/react": "^19.0.1",
+    "@types/react-dom": "^19",
     "postcss": "^8.4.49",
     "tailwindcss": "^3.4.16"
   }

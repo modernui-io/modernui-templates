@@ -6,12 +6,12 @@ import { BrowserUIProviders } from "./providers";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
+  variable: "--font-sans",
   weight: "100 900",
 });
 const geistMono = localFont({
   src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
+  variable: "--font-mono",
   weight: "100 900",
 });
 
@@ -29,11 +29,11 @@ export default function RootLayout({
     <html
       lang="en"
       dir="ltr"
-      className="no-scrollbar scroll-smooth antialiased focus:scroll-auto"
+      className="no-scrollbar scroll-smooth antialiased focus:scroll-auto h-full"
       suppressHydrationWarning
     >
       <body
-        className={`${geistSans.variable} ${geistMono.variable} min-h-dvh bg-background font-sans overflow-x-hidden`}
+        className={`${geistSans.variable} ${geistMono.variable} min-h-dvh h-full bg-background font-sans overflow-x-hidden`}
       >
         <BrowserUIProviders>
           <div vaul-drawer-wrapper="">{children}</div>

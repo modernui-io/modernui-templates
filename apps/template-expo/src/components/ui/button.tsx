@@ -1,5 +1,5 @@
 import type { VariantProps } from "class-variance-authority";
-import * as React from "react";
+import React, { type JSX } from "react";
 import { Pressable } from "react-native";
 
 import { cva } from "class-variance-authority";

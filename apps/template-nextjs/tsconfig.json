@@ -22,7 +22,8 @@
     /** Keep TSC performant in monorepos */
     "incremental": true,
     "disableSourceOfProjectReferenceRedirect": true,
-    "tsBuildInfoFile": ".tsbuildinfo",
+    // "tsBuildInfoFile": ".tsbuildinfo",
+    "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json",
 
     /** Strictness */
     "strict": true,
@@ -55,5 +56,5 @@
     ]
   },
   "include": [".", "next-env.d.ts", ".next/types/**/*.ts"],
-  "exclude": ["node_modules", "public/*.js"]
+  "exclude": ["node_modules", "public/*.js", "out", ".next"]
 }
